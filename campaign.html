@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campaign</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(
+                rgba(255, 255, 255, 0.85), 
+                rgba(255, 255, 255, 0.85)
+            ), url('background.avif') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 30px;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .slideshow-container {
+            max-width: 900px;
+            position: relative;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .mySlides {
+            display: none;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .mySlides img {
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .mySlides h1 {
+            font-size: 2em;
+            margin-top: 15px;
+            color: #2980b9;
+        }
+
+        .mySlides h2 {
+            font-size: 1.1em;
+            font-weight: normal;
+            color: #444;
+            padding: 10px 20px;
+        }
+
+        .mySlides a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .mySlides a:hover {
+            background-color: #2ecc71;
+        }
+
+        .event-calendar {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-calendar th, .event-calendar td {
+            padding: 14px 18px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: background-color 0.3s ease;
+        }
+
+        .event-calendar th {
+            background-color: #16b03a;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        #eventDetails {
+            background-color: #f9f9f9;
+            padding: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Campaigns</h1>
+    <p>Check out our active campaigns</p>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="backtoschool.jpeg" style="width:100%; border-radius: 10px;">
+            <h1>Back to School</h1>
+            <h2>"Join our 'Back to School' campaign, where we aim to provide school supplies and learning materials to 5,000 children in rural areas. Your donations will help ensure that no child is left behind in their education. So far, we have raised 60% of our goal, and we need your support to make the final push!"</h2>
+            <a href="cover.html" target="contentFrame">Donation</a>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="education.jpg" style="width:100%; border-radius: 10px;">
+            <h1>Education for All</h1>
+            <h2>Our goal is to provide quality education to children in underserved areas. Through this campaign, we aim to raise $100,000 to build schools, supply materials, and train teachers in rural communities.</h2>
+            <a href="cover.html" target="contentFrame">Donation</a>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="water.jpg" style="width:100%; border-radius: 10px;">
+            <h1>Clean Water Initiative</h1>
+            <h2>This initiative provides clean water to rural communities by building wells and distributing water filtration systems. We aim to raise $75,000 to serve 20 villages, benefiting over 15,000 people.</h2>
+            <a href="cover.html" target="contentFrame">Donation</a>
+        </div>
+    </div>
+
+    <h1>Upcoming Events Calendar</h1>
+
+    <div id="calendar-nav" style="margin: 20px;">
+        <button onclick="changeMonth(-1)">⬅️ Previous</button>
+        <span id="monthYearLabel" style="font-weight:bold; margin: 0 20px;"></span>
+        <button onclick="changeMonth(1)">Next ➡️</button>
+    </div>
+
+    <div id="calendar"></div>
+    <div id="eventDetails"></div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000);
+        }
+
+        const events = {
+            "2025-04-25": { title: "FUN RUN CAMP", location: "RIVER PARK" },
+            "2025-05-10": { title: "GO GREEN", location: "Politeknik Seberang Perai" },
+            "2025-06-02": { title: "CHARITY COMMUNITY", location: "SMK SUNGAI ARA" },
+            "2025-07-20": { title: "River Clean-up Campaign", location: "Sungai Pinang" }
+        };
+
+        let currentYear = new Date().getFullYear();
+        let currentMonth = new Date().getMonth();
+
+        function generateCalendar(year, month) {
+            const calendar = document.getElementById("calendar");
+            const monthYearLabel = document.getElementById("monthYearLabel");
+            calendar.innerHTML = "";
+            const date = new Date(year, month);
+            const monthName = date.toLocaleString("default", { month: "long" });
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+
+            monthYearLabel.innerText = `${monthName} ${year}`;
+
+            let html = `<table class="event-calendar"><tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+                <th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>`;
+
+            for (let i = 0; i < firstDay; i++) html += "<td></td>";
+
+            for (let day = 1; day <= lastDate; day++) {
+                const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                let cellStyle = "style='background-color:white;'";
+                if (events[dateStr]) {
+                    cellStyle = "style='background-color:#b2f2bb; font-weight:bold; cursor:pointer;'";
+                }
+                html += `<td ${cellStyle} onclick="showEvent('${dateStr}')">${day}</td>`;
+                if ((firstDay + day) % 7 === 0) html += "</tr><tr>";
+            }
+
+            html += "</tr></table>";
+            calendar.innerHTML = html;
+        }
+
+        function showEvent(dateStr) {
+            const event = events[dateStr];
+            const detailBox = document.getElementById("eventDetails");
+            if (event) {
+                detailBox.innerHTML = `
+                    <strong>${event.title}</strong><br>
+                    📍 ${event.location}<br>
+                    📅 ${dateStr}
+                `;
+            } else {
+                detailBox.innerHTML = "No event on this day.";
+            }
+        }
+
+        function changeMonth(offset) {
+            currentMonth += offset;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentYear, currentMonth);
+        }
+
+        generateCalendar(currentYear, currentMonth);
+    </script>
+
+    <iframe id="contentFrame" name="contentFrame" style="width: 100%; height: 600px; border: none;"></iframe>
+</body>
+</html>

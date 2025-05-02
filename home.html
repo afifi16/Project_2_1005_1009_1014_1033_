@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #fdfcfb, #a8dd8d);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin-bottom: 30px;
+            color: #555;
+            padding: 0 10%;
+            line-height: 1.6;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 400px;
+            margin: 40px auto;
+        }
+
+        .slide {
+            display: none;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding-bottom: 15px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slide h4 {
+            margin: 15px 0 10px;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
+        .slide p {
+            padding: 0 15px;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0,0,0,0.4);
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.6);
+        }
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+       
+        /* Responsive design for mobile devices */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 1em;
+                padding: 0 5%;
+            }
+
+            body {
+                padding: 30px 10px;
+            }
+
+            .slideshow-container {
+                max-width: 80%;
+            }
+            .responsive-img {
+                max-width: 70%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CHARITY & FUNDRAISING WEBSITE</h1>
+    <p><img src="marquee1.jpg" class="responsive-img"></p>
+    <h2>Our mission is to make the world a better place through kindness and support.</h2>
+    <h3>At our CHARITY & FUNDRAISING WEBSITE, we are dedicated to improving the lives of underprivileged children by providing access to quality education and healthcare. Our mission is to empower communities and create a brighter future for the next generation.</h3>
+
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="Afifi.jpg" alt="Education for All">
+            <h4>MUHAMMAD AFIFI AFDHAL BIN AZHAR</h4>
+            <p>10DDT23F1005</p>
+        </div>
+
+        <div class="slide">
+            <img src="Naufal.jpg" alt="Healthcare Support">
+            <h4>MUHAMMAD ALIF NAUFAL BIN ABU SEMAN</h4>
+            <p>10DDT23F1009</p>
+        </div>
+
+        <div class="slide">
+            <img src="Uzair.jpg" alt="Food Distribution">
+            <h4>MUHAMMAD UZAIR FAIZ BIN MUHAMMAD NAZIR</h4>
+            <p>10DDT23F1033</p>
+        </div>
+
+        <div class="slide">
+            <img src="10DDT23F1014.jpg" alt="Community Building">
+            <h4>MOHAMAD AMIR ASYRAF BIN RAMLI</h4>
+            <p>10DDT23F1014</p>
+        </div>
+
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function showSlide(index) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[index].style.display = "block";
+        }
+
+        function changeSlide(n) {
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function autoSlide() {
+            changeSlide(1);
+            setTimeout(autoSlide, 5000); // change every 5 seconds
+        }
+
+        showSlide(slideIndex); // initial display
+        autoSlide(); // start auto sliding
+    </script>
+</body>
+</html>

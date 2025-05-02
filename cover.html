@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Join Us        </title>
+        <meta charset="UTF-8">
+        <meta name="Viewport" content="width=device=width, initial-scale=1">
+        <style>
+           
+            body{
+                background-image: url("background1.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+
+
+            }
+            .header{
+                padding: 50px;
+                text-align: center;
+                background-image: url("gambar_1.webp");
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: greenyellow;
+                font-size: 50px;
+            }
+            
+            .box {
+                text-align: center;
+                padding: 20px;
+            }
+
+            .box img {
+                width: 90%;
+                max-width: 300px;
+                border: 10px solid #52420c;
+            }
+
+            .box p {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .grid .box {
+                width: 100%;
+                max-width: 400px;
+                margin: 20px;
+            }
+
+            .back {
+                text-align: center;
+                margin: 30px;
+            }
+
+            .back a {
+                text-decoration: underline;
+                color: blue;
+            }
+
+            a:link, a:visited {
+                background-color: #f44336;
+                color: white;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            @media screen and (max-width: 650px) {
+                .column {
+                width: 100%;
+                display: block;
+                }
+            }
+
+            .content{
+                padding: 30;
+            }
+        </style>
+
+    </head>
+    <body >
+
+
+        <div class="header">
+            <h1>Join Us</h1>
+            <h4 >Let's help people need help, they life also our responsibility</h4>
+        </div>
+
+        <div class="content">
+            <h2 style="text-align: center;">Choose how do you want help people</h2>
+            <div class="grid">
+                <div class="box" style="background-color: burlywood;">
+                    <img src="donation-logo.webp">
+                    <p style="font-size: 40px; font-weight: bold ">Donation</p>
+                    <p style="font-size: 35px;">You can give a donation by click the button below</p>
+                    <a href="#" onclick="window.open('donation.html', '_blank'); return false;">Donation Form</a>
+                </div>
+
+                <div class="box" style="background-color: burlywood;">
+                    <img src="istockphoto-1498170916-612x612.jpg">
+                    <p style="font-size: 40px; font-weight: bold ;">Let's do this together</p>
+                    <p style="font-size: 35px;">Join us on our activities and give happines to all people in need</p>
+                    <a href="#" onclick="window.open('join_us.html', '_blank'); return false;">Join Us Form</a>
+                </div>
+            </div>
+        </div>
+        <iframe id="contentFrame" name="contentFrame" src="" style="width:100%; height:600px; border:none;"></iframe>
+    </body>
+</html>

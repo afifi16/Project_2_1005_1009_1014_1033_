@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e4d59f;
+    margin: 0;
+    padding: 0;
+  }
+
+.backtoschool {
+    background-image: url('backtoschool.jpeg'); /* Add your image URL */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    text-align: center;
+    padding: 100px 20px;
+    text-shadow: 0 0 3px #FF0000;
+}
+.education {
+    background-image: url('education.jpg'); /* Add your image URL */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    text-align: center;
+    padding: 100px 20px;
+    text-shadow: 0 0 3px #FF0000;
+}
+.water {
+    background-image: url('water.jpg'); /* Add your image URL */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    text-align: center;
+    padding: 100px 20px;
+    text-shadow: 0 0 3px #FF0000;
+}
+.center {
+    text-align: center;
+    }
+/* change font size and color*/
+.font a{
+    font-size: 30px;
+    color: #52420c;
+    text-decoration: none; 
+}
+/* create border and change size */
+img {
+    border: 30px solid #52420c;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* change font size */
+h1 {
+    font-size: 70px;
+}
+/* change font size */
+.font-size {
+    font-size: 30px;
+}
+
+/* make text bold */
+p {
+    font-weight: 600;
+}
+
+/* Add a background color to the top navigation */
+.topnav {
+    background-color: #e4d59f;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #52420c;
+    text-align: center;
+    padding: 25px 185px;
+    text-decoration: none;
+    font-size: 25px;
+    border-bottom: 3px solid transparent;
+    border-bottom: 5px solid;
+    font-weight: 600;
+}
+
+.topnav a:hover {
+    border-bottom: 5px solid white;
+    color: white;
+}
+
+.topnav a.active {
+    border-bottom: 5px solid white;
+    color: white;
+}
+.header1  {
+    background-color: #ffffff;
+    padding: 2px;
+    text-align: center;
+    border: none;
+}
+
+.header1 img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border: none; /* Removes any border from the image */
+}
+
+img {
+    border: none; /* Ensures all images have no border */
+}
+
+  .footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color:green;
+	color: white;
+	text-align: center;
+	padding:10px 0;
+	}
+.footer td{
+		text-align:center;
+		width:50%;
+		}

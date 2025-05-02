@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            background-image: url("fund.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+        }
+
+        div h1 {
+            background-color: green;
+            padding: 10px 10px;
+            border-radius: 30px;
+        }
+
+        .table1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+
+        .table-container {
+            background-color: #6fcb81;
+            padding: 5px 5px;
+            border-radius: 15px;
+        }
+
+        td, th, input, textarea {
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        #response {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px;
+        }
+		input:focus, textarea:focus, button:focus {
+        outline: 2px solid #4CAF50; /* Green outline */
+    }
+    </style>
+    <script src="validContact.js" language="javascript"></script> <!-- External JS File -->
+</head>
+<body>
+
+<div>
+    <h1 style="font-family: verdana;">CONTACT US</h1>
+</div>
+<hr>
+<div class="table1">
+    <div class="table-container">
+        <form name="myForm" id="contactForm" onsubmit="return validate();">
+            <table style="font-family: verdana;" border="1">
+                <tr>
+                    <th>Full Name</th>
+                    <td><input name="name" type="text" size="40" required></td>
+                </tr>
+                <tr>
+                    <th>Email Address</th>
+                    <td><input name="Email" type="text" size="40" required></td>
+                </tr>
+                <tr>
+                    <th>Subject</th>
+                    <td><input name="subject" type="text" size="40" required></td>
+                </tr>
+                <tr>
+                    <th>Message</th>
+                    <td><textarea name="message" cols="43" required>Type your message here.</textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-- Hidden Response Message -->
+    <div id="response" style="font-family: verdana;">
+        <h2>Thank you for contacting us!</h2>
+        <p>We will get back to you shortly.</p>
+    </div>
+</div>
+<hr>
+
+</body>
+</html>
+
+

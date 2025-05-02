@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Charity Webiste</title><!--Title of Website-->
+    </head>
+    <style>
+/* change font size and color*/
+.font a {
+    font-size: 30px;
+    color: #52420c;
+    text-decoration: none; 
+    font-family: sans-serif;
+}
+
+/* change font size */
+h1 {
+    font-size: 70px;
+}
+/* change font size */
+.font-size {
+    font-size: 30px;
+}
+/* Make text float right of images */
+.text {
+    font-size: 30px;
+    padding-right: 70px;
+    padding-top: 1%;
+    float: right;
+    font-family: sans-serif;
+}
+/* add cointainer */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* make a text bold */
+p {
+    font-weight: 600;
+}
+
+/* create border and change size */
+img {
+    border: 30px solid #52420c;
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    font-family: Arial;
+    color: #52420c;
+  }
+
+.menu a {
+    margin: 0 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-bottom: 5px solid;
+    color: #52420c;
+  }
+
+.menu a:hover {
+    background-color: white;
+    color: #52420c !important;
+    border-bottom: 5px solid #52420c !important;
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.menu a.active {
+    color: whitesmoke;
+    border-bottom: 5px solid whitesmoke;
+    font-size: 60px;
+}
+
+
+    </style>
+    <body bgcolor="#e4d59f"><!--Change bgcolor-->
+        <!--To create top navigation using style css-->
+        <div class="menu">
+            <a class="menu1" href="OurStory.html" style="font-size: 30px;">Our Story</a></th>
+            <a class="active" href="OurVision.html" style="font-size: 30px;">Our Vision</a></th>
+            <a href="Goals.html" style="font-size: 30px;">Our Mission</a></th> 
+        </div>
+        <br><br><br><!--break line-->
+        <!--to display image and text-->
+        <div class="container">
+            <img src="vision.jpg" alt="vision">
+
+            <p class="text" style="padding-left: 10px;">To build a stronger, more resilient community<br>
+                where individuals and families have the resources<br>
+                and opportunities to lead fulfilling lives.</p>
+
+        </div>
+        </div>
+        <br><br><!--Break Line-->
+        <!--text to show button for back to about us mainpage-->
+        <p align="center" class="font-size"><a href="AboutUs.html">Back</a></p>
+        <br><br><br><br>
+    </body>
+</html>
